@@ -1,0 +1,179 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #181818 0%, #222 100%);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+header {
+    background: linear-gradient(90deg, #007bff 0%, #181818 100%);
+    color: #fff;
+    padding: 32px 0 24px 0;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+    letter-spacing: 2px;
+}
+header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+main {
+    margin: 40px auto;
+    max-width: 500px;
+    background: rgba(24,24,24,0.95);
+    padding: 32px 24px;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+}
+#auction-item img,
+#auction-content img {
+    width: 100%;
+    max-width: 320px;
+    display: block;
+    margin: 0 auto 18px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+}
+input[type="number"], input[type="text"], input[type="password"], select {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 7px;
+    margin-bottom: 18px;
+    box-sizing: border-box;
+    border: 1px solid #333;
+    border-radius: 6px;
+    background: #222;
+    color: #fff;
+    font-size: 16px;
+    transition: border 0.2s;
+}
+input[type="number"]:focus, input[type="text"]:focus, input[type="password"]:focus, select:focus {
+    border: 1.5px solid #007bff;
+    outline: none;
+}
+button, #logout-btn-useradmin, #logout-btn-seller, #add-item-form button {
+    width: 100%;
+    padding: 12px 0;
+    background: linear-gradient(90deg, #007bff 0%, #222 100%);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: background 0.2s, transform 0.2s;
+}
+button:hover, #logout-btn-useradmin:hover, #logout-btn-seller:hover, #add-item-form button:hover {
+    background: linear-gradient(90deg, #0056b3 0%, #333 100%);
+    transform: translateY(-2px) scale(1.03);
+}
+a {
+    display: inline-block;
+    margin-top: 18px;
+    color: #007bff;
+    background: #222;
+    padding: 10px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+a:hover {
+    background: #007bff;
+    color: #fff;
+}
+#login-section {
+    background: #181818;
+    color: #fff;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+    border-radius: 12px;
+    padding: 32px 24px;
+    margin-bottom: 32px;
+    max-width: 400px;
+    margin: 48px auto;
+}
+#login-section h2 {
+    color: #fff;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+#login-form label {
+    color: #bbb;
+    font-size: 15px;
+    margin-top: 14px;
+}
+#login-message {
+    margin-top: 10px;
+    color: #ff4d4d;
+    font-size: 15px;
+    text-align: center;
+}
+#dashboard-useradmin, #dashboard-seller {
+    background: #222;
+    color: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    max-width: 500px;
+    margin: 30px auto;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.22);
+}
+#dashboard-useradmin h2, #dashboard-seller h2 {
+    color: #fff;
+    margin-bottom: 18px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+#auction-content h2, #auction-content p, #auction-content span {
+    color: #eee;
+}
+#add-item-form label {
+    display: block;
+    margin-top: 10px;
+    color: #bbb;
+}
+#add-item-form input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    background: #181818;
+    color: #fff;
+    border: 1px solid #333;
+    border-radius: 6px;
+}
+#seller-items ul {
+    list-style: disc;
+    padding-left: 20px;
+    color: #fff;
+}
+#seller-items h3 {
+    color: #fff;
+    margin-top: 24px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+#bid-message {
+    margin-top: 10px;
+    color: #d9534f;
+    font-size: 15px;
+}
+::-webkit-scrollbar {
+    width: 8px;
+    background: #222;
+}
+::-webkit-scrollbar-thumb {
+    background: #007bff;
+    border-radius: 4px;
+}

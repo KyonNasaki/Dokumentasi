@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up - Lelang</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <header>
+        <h1>Registrasi Akun Baru</h1>
+    </header>
+    <main>
+        <section id="login-section">
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <label for="signup-username">Username:</label>
+                <input type="text" id="signup-username" required>
+                <label for="signup-password">Password:</label>
+                <input type="password" id="signup-password" required>
+                <label for="signup-role">Daftar sebagai:</label>
+                <select id="signup-role">
+                    <option value="user">User</option>
+                    <option value="admin">Admin</option>
+                    <option value="seller">Seller</option>
+                </select>
+                <button type="submit">Sign Up</button>
+                <p id="signup-message"></p>
+            </form>
+            <p style="text-align:center;margin-top:16px;">
+                Sudah punya akun? <a href="index.html" style="color:#007bff;">Login di sini</a>
+            </p>
+        </section>
+    </main>
+    <script>
+    document.getElementById('signup-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const username = document.getElementById('signup-username').value.trim();
+        const password = document.getElementById('signup-password').value.trim();
+        const role = document.getElementById('signup-role').value;
+        const msg = document.getElementById('signup-message');
+        fetch('signup.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: `username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}&role=${encodeURIComponent(role)}`
+        })
+        .then(res => res.json())
+        .then(data => {
+            msg.textContent = data.msg;
+            msg.style.color = data.success ? 'green' : '#ff4d4d';
+            if (data.success) {
+                setTimeout(() => { window.location.href = 'index.html'; }, 1200);
+            }
+        })
+        .catch(() => {
+            msg.textContent = 'Terjadi kesalahan koneksi!';
+            msg.style.color = '#ff4d4d';
+        });
+    });
+    </script>
+</body>
+</html>
